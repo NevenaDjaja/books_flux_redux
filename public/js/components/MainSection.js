@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import BookItem from './BookItem';
 
 class MainSection extends Component {
 	constructor(props, context) {
@@ -12,7 +13,7 @@ class MainSection extends Component {
 			<section>
 				<ul>
 				  { books.map(book => 
-				  	<li key={book.id}><strong>{ book.title }</strong> by { book.author }</li>
+				  	<BookItem book={book}  key={book.id} />
 				  )}
 				</ul>
 			</section>
