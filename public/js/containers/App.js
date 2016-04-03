@@ -4,14 +4,14 @@ import MainSection from '../components/MainSection';
 
 class App extends Component {
 	render() {
-		const {todos} = this.props;
+		const {books} = this.props;
 
 		return (
 			<div>
-				LALA
+				<MainSection books={ books } />
 			</div>
 		)
 	} 
 }
 
-module.exports = App;
+export default App;
