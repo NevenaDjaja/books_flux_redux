@@ -3,18 +3,16 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './public/js/containers/App';
+import configStore from './public/js/store/configStore';
 
 const $el = document.getElementById('wrapper');
-var books = [
-	{ title: "The Slight Edge",
-		author: "Jeff Olson",
-		id: 1
-  }, {
-  	title: "The Yoga-Sutra of Patanjali",
-  	author: "Chip Hartranft",
-  	id: 2
-	}];
+const store = configStore();
+
+console.log("START!!")
+console.log(store)
 
 render( 
-	<App books={ books } />, $el
+	<Provider store={store}>
+		<App />
+	</Provider>, $el
 )
