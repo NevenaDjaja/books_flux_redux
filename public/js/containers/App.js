@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import MainSection from '../components/MainSection';
+import Header from '../components/Header';
 
 class App extends Component {
 	render() {
@@ -11,6 +12,7 @@ class App extends Component {
 
 		return (
 			<div>
+				<Header />
 				<MainSection books={ books } />
 			</div>
 		)

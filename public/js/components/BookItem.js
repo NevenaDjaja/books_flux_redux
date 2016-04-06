@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import BookItemInput from './BookItemInput';
 
 class BookItem extends Component {
 	constructor(props, context) {
@@ -13,8 +14,8 @@ class BookItem extends Component {
 		const { book } = this.props;
 
 		return (
-			<li><strong>{ book.title }</strong> by { book.author }</li>
-		)
+			<li><BookItemInput title={book.title} author={book.author} /></li>
+		);
 	}
 }
 
