@@ -9,12 +9,35 @@ class BookItemInput extends Component {
 		}
 	}
 
+	handleTitleChange(e) {
+		if (e.target.value.length !== 0) {
+			this.setState({ title: e.target.value });
+		}
+	}
+
+	handleAuthorChange(e) {
+		if (e.target.value.length !== 0) {
+			this.setState({ author: e.target.value });
+		}
+	}
+
+	handleSubmit(e) {
+		const title = this.state.title;
+		const author = this.state.author;
+		if (title && author) {
+			this.props.onSave(title, author);
+		}
+	}
+
 	render() {
 		if (this.props.newBook) {
 			return (
 				<p>
-					<label htmlFor="title">Title: </label><input id="title" type="text" /> &nbsp;&nbsp;
-					<label htmlFor="author">Author: </label><input id="author" type="text" />
+					<label htmlFor="title">Title: </label>
+					<input id="title" type="text" onChange={this.handleTitleChange.bind(this)} /> &nbsp;&nbsp;
+					<label htmlFor="author">Author: </label>
+					<input id="author" type="text" onChange={this.handleAuthorChange.bind(this)} /> &nbsp;&nbsp;
+					<input type="submit" value="Save" onClick={this.handleSubmit.bind(this)} />
 				</p>
 			)
 
@@ -25,9 +48,6 @@ class BookItemInput extends Component {
 					</p>
 					);
 			}
-			// <input type="text" 
-			// 			 placeholder={this.props.placeholder}
-			// 			 value={this.state.title}/>
 	}
 }
 

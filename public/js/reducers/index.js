@@ -11,7 +11,8 @@ function books(state = initState, action) {
 	switch (action.type) {
 		case ActionTypes.ADD_BOOK:
 			return [
-				...state, {
+				...state, 
+				{
 					title: action.title,
 					author: action.author,
 					id: state.length + 1

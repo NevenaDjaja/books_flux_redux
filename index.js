@@ -8,9 +8,6 @@ import configStore from './public/js/store/configStore';
 const $el = document.getElementById('wrapper');
 const store = configStore();
 
-console.log("START!!")
-console.log(store)
-
 render( 
 	<Provider store={store}>
 		<App />
