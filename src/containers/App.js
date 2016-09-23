@@ -6,34 +6,34 @@ import Header from '../components/Header';
 import * as BookActions from '../actions';
 
 class App extends Component {
-	render() {
-		const {books, actions} = this.props;
-		return (
-			<div>
-				<Header addBook={actions.addBook} />
-				<MainSection books={books} />
-			</div>
-		)
-	} 
+  render() {
+    const {books, actions} = this.props;
+    return (
+      <div>
+        <Header addBook={actions.addBook} />
+        <MainSection books={books} />
+      </div>
+    )
+  } 
 }
 
 App.PropTypes = {
-	books: PropTypes.array.isRequired
+  books: PropTypes.array.isRequired
 }
 
 function mapStateToProps(state) {
-	return {
-		books: state.books
-	}
+  return {
+    books: state.books
+  }
 }
 
 function mapDispatchToProps(dispatch) {
-	return {
-		actions: bindActionCreators(BookActions, dispatch)
-	}
+  return {
+    actions: bindActionCreators(BookActions, dispatch)
+  }
 }
 
 export default connect(
-	mapStateToProps,
-	mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(App);

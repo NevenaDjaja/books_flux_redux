@@ -9,7 +9,7 @@ const $el = document.getElementById('wrapper');
 const store = configStore();
 
 render( 
-	<Provider store={store}>
-		<App />
-	</Provider>, $el
+  <Provider store={store}>
+    <App />
+  </Provider>, $el
 )
